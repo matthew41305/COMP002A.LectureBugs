@@ -12,3 +12,17 @@ myAverage += myGrades[i];
 myAverage = myAverage / myGrades.length;
 
 console.log("My grade average is " + myAverage);
+
+// validating grades portion
+function validateGrade(grade) {
+    // grade must be entered as a number
+    if (typeof grade !== 'number') {
+        // if not a number, it wil throw this error message
+        throw new Error("The value must be a number");
+    }
+    // sets values between 0-100 and will throw error message if it is not within this range
+    if (grade < 0 || grade > 100) {
+        throw new Error("The value must be between 0 and 100");
+    }
+    return grade;
+}
