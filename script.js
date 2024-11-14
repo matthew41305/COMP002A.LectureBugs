@@ -26,3 +26,14 @@ function validateGrade(grade) {
     }
     return grade;
 }
+
+// validating grade that is out of bounds, displays unexpected error based on conditions (not withing 1-100)
+try {
+    validateGrade(109);
+} catch (e) {
+    if (e instanceof GradeError) {
+        console.error("Grade error: " + e.message);
+    } else {
+        console.error("Unexpected error: " + e.message);
+    }
+}
